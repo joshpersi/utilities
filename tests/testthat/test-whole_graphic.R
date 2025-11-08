@@ -9,7 +9,7 @@ test_that("plot PNG snapshot matches", {
 
   base::print(p)
 
-  add_source_caption("Natural Resources Canada")
+  add_source_caption(p, "Natural Resources Canada")
 
   add_author_caption(p)
 
