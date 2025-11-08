@@ -1,4 +1,4 @@
-test_that("author caption appears correctly", {
+test_that("source caption appears correctly", {
   temp_file <- fs::file_temp(ext = ".png")
 
   grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
@@ -11,7 +11,7 @@ test_that("author caption appears correctly", {
 
   base::print(p)
 
-  grid::grid.draw(author_caption())
+  add_source_caption("An example source")
 
   grDevices::dev.off()
 

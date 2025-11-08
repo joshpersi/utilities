@@ -9,9 +9,9 @@ test_that("plot PNG snapshot matches", {
 
   base::print(p)
 
-  grid::grid.draw(source_caption("Natural Resources Canada"))
+  add_source_caption("Natural Resources Canada")
 
-  grid::grid.draw(author_caption())
+  add_author_caption()
 
   grDevices::dev.off()
 
