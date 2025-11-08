@@ -1,3 +1,34 @@
+#' @title
+#' Add author caption to graphic
+#'
+#' @description
+#' Add the name of the author to the bottom right corner of a ggplot graphic.
+#'
+#' @param p A ggplot object.
+#' @param author A character string specifying the author's name. Default is "Josh Persi".
+#' @param family A character string specifying the font family for the caption text. If NULL, uses the font family from the plot theme.
+#'
+#' @return
+#' NULL. The function draws the caption on the current graphics device.
+#'
+#' @examples
+#' temp_file <- fs::file_temp(ext = ".png")
+#'
+#' grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+#'
+#' p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
+#'   ggplot2::geom_point() +
+#'   ggplot2::theme(
+#'     plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in")
+#' )
+#'
+#' base::print(p)
+#'
+#' add_author_caption(p)
+#'
+#' grDevices::dev.off()
+#'
+#' @export
 add_author_caption <- function(p = NULL, author = "Josh Persi", family = NULL) {
   if (!ggplot2::is_ggplot(p)) {
     rlang::abort("`p` must be a ggplot object.")
@@ -30,4 +61,6 @@ add_author_caption <- function(p = NULL, author = "Josh Persi", family = NULL) {
   )
 
   grid::grid.draw(caption)
+
+  return(NULL)
 }

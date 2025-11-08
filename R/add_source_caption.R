@@ -1,3 +1,33 @@
+#' @title
+#' Add data source caption to graphic
+#'
+#' @description
+#' Add the name of the data source to the bottom left corner of a ggplot graphic.
+#'
+#' @param p A ggplot object.
+#' @param family A character string specifying the font family for the caption text. If NULL, uses the font family from the plot theme.
+#'
+#' @return
+#' NULL. The function draws the caption on the current graphics device.
+#'
+#' @examples
+#' temp_file <- fs::file_temp(ext = ".png")
+#'
+#' grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+#'
+#' p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
+#'   ggplot2::geom_point() +
+#'   ggplot2::theme(
+#'     plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in")
+#'   )
+#'
+#' base::print(p)
+#'
+#' add_source_caption(p, "An example source")
+#'
+#' grDevices::dev.off()
+#'
+#' @export
 add_source_caption <- function(p = NULL, source, family = NULL) {
   if (!ggplot2::is_ggplot(p)) {
     rlang::abort("`p` must be a ggplot object.")
@@ -30,4 +60,6 @@ add_source_caption <- function(p = NULL, source, family = NULL) {
   )
 
   grid::grid.draw(caption)
+
+  return(NULL)
 }

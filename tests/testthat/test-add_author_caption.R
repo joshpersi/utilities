@@ -6,7 +6,7 @@ test_that("author caption appears correctly", {
   p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
     ggplot2::geom_point() +
     ggplot2::theme(
-      plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in"),
+      plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in")
     )
 
   base::print(p)
@@ -26,7 +26,7 @@ test_that("author caption appears correctly with specified font", {
   p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
     ggplot2::geom_point() +
     ggplot2::theme(
-      plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in"),
+      plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in")
     )
 
   base::print(p)
