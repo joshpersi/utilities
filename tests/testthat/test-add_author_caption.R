@@ -11,7 +11,7 @@ test_that("author caption appears correctly", {
 
   base::print(p)
 
-  add_author_caption()
+  add_author_caption(p)
 
   grDevices::dev.off()
 

@@ -11,7 +11,7 @@ test_that("plot PNG snapshot matches", {
 
   add_source_caption("Natural Resources Canada")
 
-  add_author_caption()
+  add_author_caption(p)
 
   grDevices::dev.off()
 
