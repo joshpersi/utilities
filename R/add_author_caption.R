@@ -62,5 +62,5 @@ add_author_caption <- function(p = NULL, author = "Josh Persi", family = NULL) {
 
   grid::grid.draw(caption)
 
-  return(NULL)
+  base::invisible()
 }

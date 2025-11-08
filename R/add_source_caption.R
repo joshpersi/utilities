@@ -61,5 +61,5 @@ add_source_caption <- function(p = NULL, source, family = NULL) {
 
   grid::grid.draw(caption)
 
-  return(NULL)
+  base::invisible()
 }
