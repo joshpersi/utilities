@@ -3,14 +3,23 @@
 \docType{data}
 \name{nord_palette}
 \alias{nord_palette}
-\title{Nord colour palette}
+\title{A Nord colour palette}
 \format{
-A named character vector with 16 colors
+An object of class \code{character} of length 16.
 }
 \usage{
 nord_palette
 }
+\value{
+A named vector of length 16 with each element being a separate colour
+}
 \description{
-A named vector of hex colors
+A port of the Nord colour theme from https://www.nordtheme.com/docs/colors-and-palettes
+}
+\examples{
+nord_palette["nord0"]
+
+nord_palette[c("nord0", "nord1")]
+
 }
 \keyword{datasets}

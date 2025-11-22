@@ -1,8 +1,17 @@
-#' Nord colour palette
+#' @title
+#' A Nord colour palette
 #'
-#' A named vector of hex colors
+#' @description
+#' A port of the Nord colour theme from https://www.nordtheme.com/docs/colors-and-palettes
 #'
-#' @format A named character vector with 16 colors
+#' @return
+#' A named vector of length 16 with each element being a separate colour
+#'
+#' @examples
+#' nord_palette["nord0"]
+#'
+#' nord_palette[c("nord0", "nord1")]
+#'
 #' @export
 nord_palette <- base::c(
   nord0 = "#2E3440",

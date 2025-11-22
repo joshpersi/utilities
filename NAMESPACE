@@ -3,4 +3,5 @@
 export(add_author_caption)
 export(add_source_caption)
 export(nord_palette)
+export(setup_showtext)
 export(theme_custom)
