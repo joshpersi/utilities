@@ -4,7 +4,7 @@
 \alias{theme_custom}
 \title{A custom ggplot2 theme}
 \usage{
-theme_custom()
+theme_custom(...)
 }
 \value{
 A ggplot2 theme object.
