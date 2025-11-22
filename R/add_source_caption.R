@@ -23,12 +23,12 @@
 #'
 #' base::print(p)
 #'
-#' add_source_caption(p, "An example source")
+#' add_source_attribution(p, "An example source")
 #'
 #' grDevices::dev.off()
 #'
 #' @export
-add_source_caption <- function(p = NULL, source, family = NULL) {
+add_source_attribution <- function(p = NULL, source, family = NULL) {
   if (!ggplot2::is_ggplot(p)) {
     rlang::abort("`p` must be a ggplot object.")
   }

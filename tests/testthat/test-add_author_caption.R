@@ -11,7 +11,7 @@ test_that("author caption appears correctly", {
 
   base::print(p)
 
-  add_author_caption(p)
+  add_author_attribution(p)
 
   grDevices::dev.off()
 
@@ -31,7 +31,7 @@ test_that("author caption appears correctly with specified font", {
 
   base::print(p)
 
-  add_author_caption(p, family = "serif")
+  add_author_attribution(p, family = "serif")
 
   grDevices::dev.off()
 
@@ -52,7 +52,7 @@ test_that("author caption appears correctly with extracted font", {
 
   base::print(p)
 
-  add_author_caption(p)
+  add_author_attribution(p)
 
   grDevices::dev.off()
 

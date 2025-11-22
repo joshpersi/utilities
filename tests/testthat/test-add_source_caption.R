@@ -11,7 +11,7 @@ test_that("source caption appears correctly", {
 
   base::print(p)
 
-  add_source_caption(p, "An example source")
+  add_source_attribution(p, "An example source")
 
   grDevices::dev.off()
 
@@ -31,7 +31,7 @@ test_that("source caption appears correctly with specified font", {
 
   base::print(p)
 
-  add_source_caption(p, "An example source", family = "serif")
+  add_source_attribution(p, "An example source", family = "serif")
 
   grDevices::dev.off()
 
@@ -52,7 +52,7 @@ test_that("source caption appears correctly with extracted font", {
 
   base::print(p)
 
-  add_source_caption(p, "An example source")
+  add_source_attribution(p, "An example source")
 
   grDevices::dev.off()
 

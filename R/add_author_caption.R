@@ -24,12 +24,16 @@
 #'
 #' base::print(p)
 #'
-#' add_author_caption(p)
+#' add_author_attribution(p)
 #'
 #' grDevices::dev.off()
 #'
 #' @export
-add_author_caption <- function(p = NULL, author = "Josh Persi", family = NULL) {
+add_author_attribution <- function(
+  p = NULL,
+  author = "Josh Persi",
+  family = NULL
+) {
   if (!ggplot2::is_ggplot(p)) {
     rlang::abort("`p` must be a ggplot object.")
   }
