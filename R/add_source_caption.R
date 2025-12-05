@@ -13,7 +13,7 @@
 #' @examples
 #' temp_file <- fs::file_temp(ext = ".png")
 #'
-#' grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+#' ragg::agg_png(temp_file, width = 6, height = 6, units = "in", res = 300)
 #'
 #' p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
 #'   ggplot2::geom_point() +
@@ -50,7 +50,7 @@ add_source_attribution <- function(p = NULL, source, family = NULL) {
   caption <- grid::textGrob(
     label = bquote(bold("Data") * ":" ~ .(source)),
     x = grid::unit(0.25, "in"),
-    y = grid::unit(0.03, "npc"),
+    y = grid::unit(0.15, "in"),
     hjust = 0,
     vjust = 1,
     gp = grid::gpar(

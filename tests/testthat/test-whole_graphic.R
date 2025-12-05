@@ -1,17 +1,19 @@
-test_that("plot PNG snapshot matches", {
+testthat::test_that("plot PNG snapshot matches", {
+  utilities::setup_showtext()
+
   temp_file <- fs::file_temp(ext = ".png")
 
-  grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+  ragg::agg_png(temp_file, width = 6, height = 6, units = "in", res = 300)
 
   p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
     ggplot2::geom_point() +
-    theme_custom()
+    utilities::theme_custom()
 
   base::print(p)
 
-  add_source_attribution(p, "Natural Resources Canada")
+  utilities::add_source_attribution(p, "Natural Resources Canada")
 
-  add_author_attribution(p)
+  utilities::add_author_attribution(p)
 
   grDevices::dev.off()
 

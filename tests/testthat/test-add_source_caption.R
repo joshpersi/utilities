@@ -1,7 +1,7 @@
 test_that("source caption appears correctly", {
   temp_file <- fs::file_temp(ext = ".png")
 
-  grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+  ragg::agg_png(temp_file, width = 6, height = 6, units = "in", res = 300)
 
   p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
     ggplot2::geom_point() +
@@ -21,7 +21,7 @@ test_that("source caption appears correctly", {
 test_that("source caption appears correctly with specified font", {
   temp_file <- fs::file_temp(ext = ".png")
 
-  grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+  ragg::agg_png(temp_file, width = 6, height = 6, units = "in", res = 300)
 
   p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
     ggplot2::geom_point() +
@@ -41,7 +41,7 @@ test_that("source caption appears correctly with specified font", {
 test_that("source caption appears correctly with extracted font", {
   temp_file <- fs::file_temp(ext = ".png")
 
-  grDevices::png(temp_file, width = 6, height = 6, units = "in", res = 300)
+  ragg::agg_png(temp_file, width = 6, height = 6, units = "in", res = 300)
 
   p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
     ggplot2::geom_point() +
@@ -57,4 +57,24 @@ test_that("source caption appears correctly with extracted font", {
   grDevices::dev.off()
 
   testthat::expect_snapshot_file(temp_file, "plot_with_extracted_font.png")
+})
+
+test_that("source caption appears correctly with variable width graphic", {
+  temp_file <- fs::file_temp(ext = ".png")
+
+  ragg::agg_png(temp_file, width = 9, height = 6, units = "in", res = 300)
+
+  p <- ggplot2::ggplot(penguins, ggplot2::aes(bill_dep, bill_len)) +
+    ggplot2::geom_point() +
+    ggplot2::theme(
+      plot.margin = ggplot2::margin(0.25, 0.25, 0.375, 0.25, unit = "in")
+    )
+
+  base::print(p)
+
+  add_source_attribution(p, "An example source")
+
+  grDevices::dev.off()
+
+  testthat::expect_snapshot_file(temp_file, "plot_with_different_width.png")
 })
